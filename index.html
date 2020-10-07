@@ -3,26 +3,33 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Game</title>
+	<title>Matt's Heaps Extensions</title>
 	<style>
 		html,body {
-			margin: 0;
-			padding: 0;
-			background-color: black;
-			width: 100%;
-			height: 100%;
 		}
 
-		canvas#webgl {
-			width: 100%;
-			height: 100%;
-		}
 	</style>
 </head>
 
 <body>
-	<canvas id="webgl" style="width:100%; height:100%"></canvas>
-	<script type="text/javascript" src="app.js"></script>
+	<h2>Matt's Heaps Extension Sample Page</h2>
+	<p>This a very simple page demonstrating some extensions to the Heaps game engine written by Matt Chudleigh in the summer of 2020</p>
+	<h3>GLTF Importer</h3>
+	<p><a href= "gltf-heaps/index.html">This sample</a> shows a few simple models being loaded into Heaps via a new <a href="https://www.khronos.org/gltf/">GLTF</a> importer as well as generated convex hulls for the models.</p>
+	<h3>GJK Collision Detection</h3>
+	<p><a href= "collision-heaps/index.html">This sample</a> demonstrates collision detection of convex bodies via a custom implementation of the GJK collision algorithm and EPA for penetration vector calculation.</p>
+	<p>
+		It is a modified GJK implementation enhanced with the signed volume distance method
+		based on <a href= "https://ora.ox.ac.uk/objects/uuid:69c743d9-73de-4aff-8e6f-b4dd7c010907/download_file?safe_filename=GJK.PDF&file_format=application%2Fpdf&type_of_work=Journal+article">this paper</a> by Montanari, Petrinic and Barbier.
+	</p>
+	<h3>Notes:</h3>
+	<ul>
+		<li>The Heaps fork with both the GLTF and GJK code is <a href="https://github.com/mchudleigh/heaps">here</a></li>
+		<li>The code is not quite ready for mass consumption but can be cleaned up if there is community interest</li>
+		<li>The GLTF and GJK implementations are pure Haxe</li>
+		<li>These should be cross target safe. Development was done primarily targetting Hashlink and cleanly converted to JS for the demo</li>
+		<li>I am not a web front-end developer (as you can clearly see)</li>
+	</ul>
 </body>
 
 </html>
