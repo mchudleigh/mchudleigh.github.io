@@ -15,7 +15,7 @@
 	<h2>Matt's Heaps Extension Sample Page</h2>
 	<p>This a very simple page demonstrating some extensions to the Heaps game engine written by Matt Chudleigh in the summer of 2020</p>
 	<h3>GLTF Importer</h3>
-	<p><a href= "gltf-heaps/index.html">This sample</a> shows a few simple models being loaded into Heaps via a new <a href="https://www.khronos.org/gltf/">GLTF</a> importer as well as generated convex hulls for the models.</p>
+	<p><a href= "gltf-heaps/index.html">This sample</a> shows a few simple models that were imported from <a href="https://www.khronos.org/gltf/">GLTF</a> into Heaps via a new importer. It also demostrates a runtime convex hull generator.</p>
 	<h3>GJK Collision Detection</h3>
 	<p><a href= "collision-heaps/index.html">This sample</a> demonstrates collision detection of convex bodies via a custom implementation of the GJK collision algorithm and EPA for penetration vector calculation.</p>
 	<p>
@@ -26,8 +26,12 @@
 	<ul>
 		<li>The Heaps fork with both the GLTF and GJK code is <a href="https://github.com/mchudleigh/heaps">here</a></li>
 		<li>The code is not quite ready for mass consumption but can be cleaned up if there is community interest</li>
+		<li>Both demos make use of a custom convex hull generator also written in Haxe based on the Quickhull algorithm</li>
+		<li>The rock in the collision demo is a randomly generated convex shape</li>
+		<li>The GLTF demo doesn't really show GLTF loading because the actual conversion is done at compile time and converted to HMD, but the models shown were originally imported from GLTF</li>
 		<li>The GLTF and GJK implementations are pure Haxe</li>
 		<li>These should be cross target safe. Development was done primarily targetting Hashlink and cleanly converted to JS for the demo</li>
+		<li>The GJK/EPA collision seems incredibly stable. The calculated value is stable to about 9 significant figures (see the demo to understand)</li>
 		<li>I am not a web front-end developer (as you can clearly see)</li>
 	</ul>
 </body>
